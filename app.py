@@ -46,7 +46,7 @@ def parts_list():
 def parts(part):
     if part is None:
         part = request.environ['SEARCH_TEXT']
-    page = json_get('parts/{part}.json')
+    page = json_get(f'parts/{part}.json')
     return gopher.render_menu_template('part.gopher', page=page)
 
 
