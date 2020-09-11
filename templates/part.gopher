@@ -1,0 +1,14 @@
+Parts Horse - {{ page.name }}
+=============={{ '=' * page.name|length }}
+
+{{ page.summary }}
+
+Pins: {{ page.number_of_pins }}
+Package: {{ page.style }}
+
+Datasheet: https://parts.horse/{{ page.datasheet }}
+(Sorry, it's not available on Gopher yet. <3)
+
+-----------
+{{ menu.query('Part Search', url_for('search')) }}
+{{ menu.dir('Part List', url_for('index')) }}

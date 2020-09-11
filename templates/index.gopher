@@ -1,0 +1,5 @@
+Parts Horse
+===========
+
+{{ menu.query('Part Search', url_for('search')) }}
+{{ menu.dir('Part List', url_for('parts_list')) }}

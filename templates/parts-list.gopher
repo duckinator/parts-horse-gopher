@@ -1,0 +1,11 @@
+Parts Horse - Parts List
+========================
+
+{{ menu.query('Part Search', url_for('search')) }}
+{{ menu.dir('Home', url_for('index')) }}
+
+{% for part in page.parts %}
+{{ menu.dir(part.name, part.url_path) }}
+Pins: {{ part.number_of_pins }}
+Package: {{ part.style }}
+{% endfor %}

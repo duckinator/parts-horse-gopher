@@ -1,0 +1,14 @@
+Parts Horse - Search
+====================
+
+{{ menu.query('Part Search', url_for('search')) }}
+{{ menu.dir('Home', url_for('index')) }}
+
+Query: {{ page.query }}
+
+{% for result in page.results %}
+{{ menu.dir(result.name, result.url_path) }}
+Pins: {{ result.number_of_pins }}
+Package: {{ result.style }}
+
+{% endfor %}
