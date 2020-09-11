@@ -1,5 +1,8 @@
 Parts Horse
 ===========
 
+Find information on various electrical components.
+Also available via HTTP!
+
 {{ menu.query('Part Search', url_for('search')) }}
 {{ menu.dir('Part List', url_for('parts_list')) }}
