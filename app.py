@@ -2,6 +2,7 @@
 
 import os
 from urllib.request import urlopen
+import urllib.error
 import json
 from flask import Flask, request
 from flask_gopher import GopherExtension, GopherRequestHandler
@@ -18,7 +19,12 @@ def json_get(path):
     """Fetch API endpoints from Parts Horse."""
     if path[0] == '/':
         path = path[1:]
-    result_text = urlopen(f'https://parts.horse/{path}').read().decode()
+    url = f'https://parts.horse/{path}'
+    try:
+        result_text = urlopen(url).read().decode()
+    except urllib.error.HTTPError as e:
+        print(f'Failed to load URL: {path}')
+        raise e
     return json.loads(result_text)
 
 
